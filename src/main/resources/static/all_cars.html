@@ -1,0 +1,41 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>All Cars</h2>
+                <span flex></span>
+                <md-button ng-click="cancel()">
+                    Exit
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <table id="carsTable" ng-table="vm.tableParams" class="table">
+                <tr ng-repeat="c in cars">
+                    <td title="'Name'">
+                        {{c.name}}
+                    </td>
+                    <td title="'Price'">
+                        {{c.price}}
+                    </td>
+                    <td title="'Date of Purchase'">
+                        {{c.dateOfPurchase}}
+                    </td>
+                    <td title="'In Repair'">
+                        {{c.inRepair}}
+                    </td>
+                    <td title="'Is Lent'">
+                        {{c.isLent}}
+                    </td>
+                    <td title="'Actual Price'">
+                        {{c.actualPrice}}
+                    </td>
+                    <td title="'Image'">
+                        <button id="showImage" ng-click="showImage(c.image, $event)">Show Image</button>
+                    </td>
+                </tr>
+            </table>
+        </md-dialog-content>
+    </form>
+</md-dialog>

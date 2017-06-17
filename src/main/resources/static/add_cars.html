@@ -1,0 +1,57 @@
+<md-dialog>
+    <form ng-cloak ng-submit="addCar()">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Add Car</h2>
+                <span flex></span>
+                <md-button ng-click="cancel()">
+                    Exit
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div layout-gt-sm="row">
+                <md-input-container>
+                    <label>Name of car</label>
+                    <input required name="clientName" ng-model="car.name">
+                    <div ng-messages="car.name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block">
+                    <label>Price</label>
+                    <input required ng-model="car.price" type="number">
+                    <div ng-messages="car.price.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <div class="md-block">
+                    <md-datepicker required ng-model="car.dateOfPurchase"
+                                   md-placeholder="Date of Purchase "></md-datepicker>
+                </div>
+            </div>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block">
+                    <md-switch class="md-primary" name="special" ng-model="car.inRepair" required>
+                        Repaired
+                    </md-switch>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block">
+                    <md-switch class="md-primary" name="special" ng-model="car.isLent" required>
+                        Lent
+                    </md-switch>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-button type="submit">Save</md-button>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>
